@@ -1,6 +1,6 @@
 <?php /*////////////////////////////////////////////////////////////////////////////////////////
 //                                                                                            //
-//   copyright (c) 2018-2024, marcus fehse                                                    //
+//   copyright (c) 2018-2025, marcus fehse                                                    //
 //   all rights reserved.                                                                     //
 //                                                                                            //
 //   a small interactive map coded for rehkitzretzung-brandenburg.com by                      //
@@ -19,7 +19,7 @@
 //       <https://www.gnu.org/licenses/gpl-3.0.html>                                          //
 //                                                                                            //
 //   for more details.                                                                        //
-//                                                        last edited on 17–JUN-2024 by mrx   //
+//                                                        last edited on 01–MAR-2025 by mrx   //
 //                                                                                            //
 ///////////////////////////////////////////////////////////////////////////////////////////*/ ?>
 <!DOCTYPE html>
@@ -30,7 +30,7 @@
 		<meta name="generator" content="just cookie-free web code">
 		<meta name="robots" content="noarchive">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-		<title>rehkitzrettung brandenburg e.v.&nbsp;&nbsp; &raquo;&nbsp;&nbsp; karte der ansprechpartner</title>
+		<title>Rehkitzrettung Brandenburg e.V.&nbsp;&nbsp; &raquo;&nbsp;&nbsp; Fernpiloten + Einsatzgebiete</title>
 		<link rel="stylesheet" href="font-awesome/6.4.0/css/all.min.css?version=<?php echo filemtime('/font-awesome/6.4.0/css/all.min.css') ?>">
 		<link rel="stylesheet" href="leaflet/1.9.4/leaflet.css">
 		<script src="leaflet/1.9.4/leaflet.js"></script>
@@ -59,14 +59,17 @@
 			var pilotsGroup = L.layerGroup().addTo(map);
 			var pilots = [
 				// ['name', 'area', 'phone number', 'e-mail address', [location latlng], radius area, [operationCenter latlng],],
-				['Philipp', '14532 + Umgebung', '', 'info@rehkitzrettung-brandenburg.com', [52.371716, 13.202617], 40,],
-				['Gerd', '16348 + 50 km', '+49 160 96286381', 'gerd.harder@rehkitzrettung-brandenburg.com', [52.762981, 13.516306], 50, [52.691245, 13.452246],],
-				['Frank M.', 'Hennigsdorf + 50 km', '+49 152 55186222', 'frank.marcinkowski@rehkitzrettung-brandenburg.com', [52.630765, 13.206474], 50,],
-				['Frank N.', 'HVL + Umland', '+49 1575 3708008', 'frank.neumann@rehkitzrettung-brandenburg.com', [52.508305, 13.077033], 80, [52.623082, 12.630686],],
-				['Enrico', 'Brandenburg (Nord)', '+49 162 8025614', 'enrico.wolf@rehkitzrettung-brandenburg.com', [52.556864, 13.447943], 50, [53.085128, 13.853745],],
-				['Mirko', '15738 + 80 km', '+49 171 1749891', 'mirko.pflock@rehkitzrettung-brandenburg.com', [52.345574, 13.598050], 80, [52.348956, 13.622255],],
+                ['Kay', 'Elbe-Elster', '+49 151 72284856', 'kay.jackisch@rehkitzrettung-brandenburg.com', [51.467217, 13.524450], 45, [51.630106, 13.451466]],
+                ['Ralf', 'Berlin-Zehlendorf + 50 km', '+49 176 96969492', 'ralf.kruse@rehkitzrettung-brandenburg.com', [52.417321, 13.251852], 50, [52.433719, 13.249130]],
+                ['Sven', 'Teltow + 75 km', '+49 172 2618638', 'sven.mahlow@rehkitzrettung-brandenburg.com', [52.379411, 13.271962], 75,],
+				['Philipp', '14532 + Umgebung', '+49 157 53708008', 'philipp.stolzenberg@rehkitzrettung-brandenburg.com', [52.371716, 13.202617], 40,],
+                ['Lutz', 'HVL + Umland', '+49 151 12781286', 'lutz.passow@rehkitzrettung-brandenburg.com', [52.577861, 13.076151], 45, [52.630279, 12.665217],],
+				['Frank N.', 'HVL + Umland', '+49 1575 3708008', 'frank.neumann@rehkitzrettung-brandenburg.com', [52.511864, 13.060898], 45, [52.630279, 12.665217],],
+				['Enrico', 'Brandenburg (Nord)', '+49 162 8025614', 'enrico.wolf@rehkitzrettung-brandenburg.com', [52.473903, 13.794248], 50, [53.085128, 13.853745],],
+				['Mirko N.', 'Woltersdorf + 50 km', '+49 151 12723908', 'mirko.nuetzel@rehkitzrettung-brandenburg.com', [52.448642, 13.755891], 50,],
+				['Mirko P.', '15738 + Umgebung', '+49 171 1749891', 'mirko.pflock@rehkitzrettung-brandenburg.com', [52.348359, 13.610334], 40,],
+				['Frank M.', 'Hennigsdorf + 50 km', '+49 152 55186222', 'frank.marcinkowski@rehkitzrettung-brandenburg.com', [52.630557, 13.201995], 50,],
 				['Marcus', 'Templin + 60 km', '+49 151 61637437', 'marcus.fehse@rehkitzrettung-brandenburg.com', [53.167479, 13.603507], 60, [53.118265, 13.501925],],
-				['Ralf', '14165 + 50 km', '+49 176 96969492', 'ralf.kruse@rehkitzrettung-brandenburg.com', [52.418095, 13.251241], 50,],
 			];
 			function CloseOperationArea(e) {
 				operationAreasGroup.clearLayers();
